@@ -1,3 +1,5 @@
+# Programa feito com Python 3.6
+
 print("Bem-Vindo ao Move Sonda")
 print("-------=========------- \n")
 
@@ -93,7 +95,7 @@ newX = x
 newY = y
 newDirection = direction
 
-# 
+# verificacoes dos movimento presentes na lista de movimentos da sona
 for movimento in arrayComandos:
 
     if movimento == 'M':
