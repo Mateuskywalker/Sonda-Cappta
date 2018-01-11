@@ -68,40 +68,43 @@ def mudaDirecaoL(comando, direction):
 
     return direction
 
-
+# execucao das entradas de dados e das funcoes
 x = int(input("Digite a posicao inicial no eixo x: "))
 y = int(input("Digite a posicao inicial no eixo y: "))
 
 direction = input("Digite a direcao da sonda: ")
 direction = direction.upper()
 
+j = 1
+arrayComandos = []
+while j != 0:
+
+    comando = input("Digite os comandos para a sonda: ")
+    comando = comando.upper()
+    arrayComandos.append(comando)
+    j = int(input("Digite 0 para sair da tela de comandos ou qualquer numero para continuar: "))
+
 newX = x
 newY = y
 newDirection = direction
 
-i = 1
-while(i != 0):
+for movimento in arrayComandos:
 
-    comando = input("Digite um comando para nave: ")
-    comando = comando.upper()
+    if movimento == 'M':
 
-    if comando == 'M':
-
-        resultX = executaComandoX(comando, newDirection, newX)
+        resultX = executaComandoX(movimento, newDirection, newX)
         newX = resultX
-        resultY = executaComandoY(comando, newDirection, newY)
+        resultY = executaComandoY(movimento, newDirection, newY)
         newY = resultY
 
-    if comando == 'L':
+    if movimento == 'L':
 
-        resultDirection = mudaDirecaoL(comando, newDirection)
+        resultDirection = mudaDirecaoL(movimento, newDirection)
         newDirection = resultDirection
 
-    if comando == 'R':
+    if movimento == 'R':
 
-        resultDirection = mudaDirecaoR(comando, newDirection)
+        resultDirection = mudaDirecaoR(movimento, newDirection)
         newDirection = resultDirection
 
-    print("--X: {}, Y: {}--".format(resultX, resultY))
-
-    i = int(input("Digite 0 para sair da tela de comandos ou qualquer tecla para continuar: "))
+print("--X: {}, Y: {}, Direction: {} --".format(resultX, resultY, direction))
