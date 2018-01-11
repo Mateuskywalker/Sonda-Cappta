@@ -2,6 +2,8 @@ print("Bem-Vindo ao Move Sonda")
 print("-------=========------- \n")
 
 # funcoes de movimento da sonda
+
+# move a sonda no eixo x
 def executaComandoX(comando, direction, x):
 
     if comando == 'M' and direction == 'E':
@@ -15,6 +17,7 @@ def executaComandoX(comando, direction, x):
     #print("X: {}".format(x))
     return x
 
+# move a sonda no eixo y
 def executaComandoY(comando, direction, y):
 
     if comando == 'M' and direction == 'N':
@@ -28,6 +31,7 @@ def executaComandoY(comando, direction, y):
     #print("Y: {}".format(y))
     return y
 
+# muda a direcao da sonda para 90 graus a direita
 def mudaDirecaoR(comando, direction):
 
     if(comando == 'R' and direction == 'N'):
@@ -48,6 +52,7 @@ def mudaDirecaoR(comando, direction):
 
     return direction
 
+# muda a direcao da sonda para 90 graus a esquerda
 def mudaDirecaoL(comando, direction):
 
     if(comando == 'L' and direction == 'N'):
@@ -81,13 +86,14 @@ while j != 0:
 
     comando = input("Digite os comandos para a sonda: ")
     comando = comando.upper()
-    arrayComandos.append(comando)
+    arrayComandos.append(comando) # adiciona todos os movimentos inseridos na lista 'arrayComandos'
     j = int(input("Digite 0 para sair da tela de comandos ou qualquer numero para continuar: "))
 
 newX = x
 newY = y
 newDirection = direction
 
+# 
 for movimento in arrayComandos:
 
     if movimento == 'M':
