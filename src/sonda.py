@@ -95,7 +95,7 @@ newX = x
 newY = y
 newDirection = direction
 
-# verificacoes dos movimento presentes na lista de movimentos da sona
+# verificacoes dos movimentos presentes na lista de movimentos da sonda
 for movimento in arrayComandos:
 
     if movimento == 'M':
